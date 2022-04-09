@@ -1,11 +1,11 @@
 pipeline {
 
   environment {
-    PROJECT = "indigo-history-337312"
-    APP_NAME = "cart"
-    FE_SVC_NAME = "${APP_NAME}-frontend"
-    CLUSTER = "way2die"
-    CLUSTER_ZONE = "us-east4-b"
+    PROJECT = "srinag"
+    APP_NAME = "cartservice"
+    FE_SVC_NAME = "${APP_NAME}-cartservice"
+    CLUSTER = "hipstar"
+    CLUSTER_ZONE = "us-central1-c"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
     JENKINS_CRED = "${PROJECT}"
   }
@@ -62,8 +62,8 @@ spec:
     stage('Deploy Dev') {
       steps {
         container('kubectl') {
-          sh "gcloud container clusters get-credentials peddarayudu --zone us-east4-b	 --project my-project-600-339318"
-          sh "kubectl apply -f service.yaml "
+          sh "gcloud container clusters get-credentials hipstar --zone us-central1-c --project srinag"
+          sh "kubectl apply -f cartservice.yaml "
           
         }
       }
