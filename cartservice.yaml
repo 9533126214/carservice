@@ -29,7 +29,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/ascendant-timer-350911/cartservice:latest
+        image: gcr.io/google-samples/microservices-demo/cartservice:v0.3.6
         ports:
         - containerPort: 7070
         env:
