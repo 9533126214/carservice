@@ -29,7 +29,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/cartservice:v0.3.6
+        image: gcr.io/ascendant-timer-350911/cartservice:latest
         ports:
         - containerPort: 7070
         env:
@@ -57,7 +57,7 @@ kind: Service
 metadata:
   name: cartservice
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: cartservice
   ports:
